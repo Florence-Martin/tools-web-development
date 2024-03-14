@@ -7,6 +7,10 @@ const Single = () => {
   const params = useLocation();
   const post = posts.find((post) => post._id === params?.state?.id);
 
+  if (!post) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="mt-2">
       <div className="mx-8 p-2 lg:p-8 lg:mx-48 my-12 text-md lg:text-lg mb-12 rounded-2xl bg-black shadow-lg shadow-white ">
@@ -50,117 +54,28 @@ const Single = () => {
           <br />
           <li>{post?.content3}</li>
         </ul>
+
         <ul className="pl-4 shadow-2xl rounded-xl">
-          <li>
-            {" "}
-            <a
-              href={post?.url1}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl1}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url2}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl2}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url3}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl3}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url4}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl4}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url5}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl5}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url6}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl6}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url7}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl7}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url8}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl8}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.url9}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUrl9}
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a
-              href={post?.ur10}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-300 "
-            >
-              {post?.titleUr10}
-            </a>
-          </li>
+          {/* Afficher les autres URLs et titres ici */}
+          {Array.from(Array(10).keys()).map((index) => {
+            const url = post[`url${index + 1}`];
+            const title = post[`titleUrl${index + 1}`];
+            if (url && title) {
+              return (
+                <li key={index}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-teal-300 "
+                  >
+                    {title}
+                  </a>
+                </li>
+              );
+            }
+            return null;
+          })}
         </ul>
       </div>
     </div>

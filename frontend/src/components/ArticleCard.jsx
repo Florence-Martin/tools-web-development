@@ -6,7 +6,7 @@ const ArticleCard = ({ img, titleTheme, title, description, url }) => {
     <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col mx-5">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col relative ">
         <img
-          className=" rounded-t-lg h-48 bg-contain bg-center "
+          className=" rounded-t-xl h-48 bg-contain bg-center p-2"
           src={img}
           alt="article"
         />

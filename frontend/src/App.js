@@ -14,7 +14,7 @@ function App() {
   const { fetchPosts } = useAppContext();
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [fetchPosts]);
   return (
     <Router>
       <Layout>
