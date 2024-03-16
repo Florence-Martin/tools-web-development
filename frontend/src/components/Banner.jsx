@@ -12,7 +12,7 @@ const Banner = () => {
   return (
     <div>
       <PopupCalendly />
-      <div className="flex bg-white justify-around items-center ">
+      <div className="flex bg-white justify-around items-center mt-4">
         <img
           src={team}
           alt="présentation 2023"
@@ -22,18 +22,16 @@ const Banner = () => {
         <ContactForm />
       </div>
       <section className="bg-black">
-        <div className="max-w-lg bg-black px-4  py-4 mx-auto text-left  md:text-center">
-          <h1 className="text-xl font-extrabold leading-10 tracking-tight text-left text-white  sm:leading-none md:text-4xl  lg:text-5xl">
+        <div className="max-w-lg bg-black px-4  py-4 mx-auto text-left md:text-center">
+          <h1 className="text-xl font-extrabold leading-10 tracking-tight text-left text-white sm:leading-none md:text-4xl lg:text-5xl">
             <span className="inline md:block">Tools</span>
-            <span className=" mt-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-emerald-400 to-green-500 md:inline-block">
+            <span className=" mt-2  text-white md:inline-block">
               {" "}
               & Shortcuts
             </span>
-            <span className="pl-1 mt-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-emerald-400 to-green-500 md:inline-block">
+            <span className="pl-1 mt-2 text-white md:inline-block">
               For
-              <span className="pl-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-cyon-400 to-purple-300">
-                Web Development
-              </span>
+              <span className="pl-1 text-white">Web Development</span>
             </span>
           </h1>
           <p className="text-center  text-xs lg:text-base ">

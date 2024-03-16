@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../styles/card-module.css";
 import BtnCode from "./BtnCode";
 
-const Card = ({ title, description, _id }) => {
+const Card = ({ _id, title, description }) => {
   return (
     <div className="card">
       <div className="content bg-gradient-to-r from-violet-500 to-fuchsia-500">
@@ -17,7 +16,7 @@ const Card = ({ title, description, _id }) => {
             {description}
           </p>
           <div className="pt-6 fixed bottom-2">
-            <Link to={`/post/${title}`} state={{ id: _id }}>
+            <Link to={`/post/${_id}`} state={{ id: _id }}>
               <BtnCode label="Ressources" />
             </Link>
           </div>

@@ -1,28 +1,17 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from "react";
-import { getPosts } from "../service";
+import { createContext, useContext, useMemo, useState } from "react";
+import postData from "../datas/technoDatas.json";
 
 const AppContext = createContext();
 const { Provider } = AppContext;
 
 const AppProvider = ({ children }) => {
-  const [posts, setPosts] = useState([]);
-
-  const fetchPosts = useCallback(() => {
-    getPosts().then(setPosts);
-  }, []);
+  const [posts] = useState(postData);
 
   const value = useMemo(() => {
     return {
       posts,
-      fetchPosts,
     };
-  }, [posts, fetchPosts]);
+  }, [posts]);
   return <Provider value={value}>{children}</Provider>;
 };
 

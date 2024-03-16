@@ -19,7 +19,11 @@ const About = () => {
         <li>définitions; </li>{" "}
         <li>accès direct aux sites officiels des langages de programmation;</li>{" "}
         <li>cheat sheet;</li> <li>comparatifs;</li>{" "}
-        <li>ressources (playground, tutos…);</li> <li>articles;</li>
+        <li>ressources (playground, tutos…);</li>
+        <li>
+          mettre en lien des personnes souhaitants échanger autour d'un sujet;
+        </li>
+        <li>articles;</li>
         <li>la place des femmes dans la tech;</li>
         <p>
           … la liste est non exhaustive et toutes vos idées pourront être

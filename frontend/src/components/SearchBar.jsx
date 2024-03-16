@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAppContext } from "../context";
+import { useAppContext } from "../context/index.js";
 import Card from "./Card";
 
 const SearchBar = () => {

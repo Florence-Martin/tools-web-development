@@ -11,16 +11,16 @@ module.exports = {
         }
       });
     });
-  },
-  insertPost: function insertPost(req, res) {
-    (0, _MongoClient.client)(function (db) {
-      db.collection(COLLECTION).insertOne(req.body).then(function () {
-        return db.collection(COLLECTION).find().toArray();
-      }).then(function (records) {
-        return res.status(200).send(records);
-      })["catch"](function () {
-        return res.status(400).send("Error fetching document from ".concat(COLLECTION));
-      });
-    });
   }
+  // insertPost: (req, res) => {
+  //   client(function (db) {
+  //     db.collection(COLLECTION)
+  //       .insertOne(req.body)
+  //       .then(() => db.collection(COLLECTION).find().toArray())
+  //       .then((records) => res.status(200).send(records))
+  //       .catch(() =>
+  //         res.status(400).send(`Error fetching document from ${COLLECTION}`)
+  //       );
+  //   });
+  // },
 };

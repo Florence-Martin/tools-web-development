@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useAppContext } from "./context";
+import { useAppContext } from "./context/index.js";
 import Home from "./pages/Home";
 import Single from "./pages/Single";
 import NotFound from "./pages/NotFound";
@@ -11,16 +11,18 @@ import Layout from "./components/Layout";
 import ArticleList from "./components/ArticleList";
 
 function App() {
-  const { fetchPosts } = useAppContext();
+  const { posts } = useAppContext();
+
   useEffect(() => {
-    fetchPosts();
-  }, [fetchPosts]);
+    console.log("Posts in App:", posts);
+  }, [posts]);
+
   return (
     <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/post/:title" element={<Single />} />
+          <Route path="/post/:_id" element={<Single />} />
           <Route path="articleList" element={<ArticleList />} />
           <Route path="mentions" element={<Mentions />} />
           <Route path="contact" element={<Contact />} />
